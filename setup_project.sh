@@ -75,6 +75,7 @@ files=(
   "examples/trip_schema.json"
   "examples/sample_trip_data.json"
   "tests/test_trip_controller.py"
+  "tests/test_vendor_controller.py"
   "tests/test_database.py"
   ".github/workflows/docker-build-push.yml"
 )
