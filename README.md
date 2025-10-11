@@ -4,13 +4,14 @@
 
 * [Overview](#overview)
 * [Features](#features)
+* [Demo Video](#demo-video)
+* [Live URL](#live-url)
 * [Repository Structure](#repository-structure)
 * [Architecture](#architecture)
 * [Data Processing & Database](#data-processing--database)
 * [API Server & Frontend](#api-server--frontend)
 * [Docker & Deployment](#docker--deployment)
 * [Testing](#testing)
-* [Demo Video](#demo-video)
 * [Environment](#environment)
 * [Team](#team)
 * [Setup Instructions](#setup-instructions)
@@ -22,7 +23,7 @@
 
 ## Overview
 
-The NYC Train Mobility App provides a comprehensive platform to process, serve, and visualize New York City train/taxi mobility data.  
+The NYC Train Mobility App provides a comprehensive platform to process, serve, and visualize New York City train mobility data.  
 It integrates a robust backend API built with FastAPI, supported by a data processing pipeline, and powered by a modern frontend interface.
 
 ---
@@ -42,7 +43,13 @@ It integrates a robust backend API built with FastAPI, supported by a data proce
 
 ## Demo Video
 
-[![Demo Video](https://img.youtube.com/vi/your-demo-video-id/0.jpg)](https://youtu.be/your-demo-video-id) showcasing key functionalities and UI walk-through.  
+[Demo Video](https://youtu.be/your-demo-video-id) showcasing key functionalities and UI walk-through.  
+
+---
+
+## Live URL
+
+[Live URL](mdhieu.tech:8083) accessible via a .tech domain.  
 
 ---
 
@@ -82,13 +89,14 @@ nyc-train-mobility-app/
 - Backend REST API serves vendor and trip data securely  
 - Frontend SPA fetches API data for interactive display  
 - Docker containers enable consistent environment setup and scalable deployments  
-- GitHub Actions for automated build, test, and Docker image pushing  
+- GitHub Actions for automated build, test, and Docker image pushing
+- [Architecture Diagram](docs/architecture_diagram.png)  
 
 ---
 
 ## Data Processing & Database
 
-- Raw NYC taxi/train data cleaned and processed in `backend/data_processing.py`  
+- Raw NYC taxi/train data cleaned and processed in [data_processing.py](backend/data_processing.py)  
 - Features computed include trip duration, speed, efficiency, idle time, fare per km  
 - Data persisted in normalized SQLite tables: `vendors` and `trips`  
 - Full schema defined via JSON schema (`examples/trip_schema.json`)  
@@ -127,15 +135,9 @@ nyc-train-mobility-app/
 ## Environment
 
 This project was developed and tested on:
-
-[![Ubuntu](https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A)](https://ubuntu.com/)  
-[![GNU Bash](https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A)](https://www.gnu.org/software/bash/)  
-[![Python](https://img.shields.io/static/v1?label=&message=Python&color=FFD43B&logo=python&logoColor=3776AB&labelColor=2F333A)](https://www.python.org/)  
-[![Vim](https://img.shields.io/static/v1?label=&message=Vim&color=019733&logo=Vim&logoColor=019733&labelColor=2F333A)](https://www.vim.org/)  
-[![VS Code](https://img.shields.io/static/v1?label=&message=Visual%20Studio%20Code&color=5C2D91&logo=Visual%20Studio%20Code&logoColor=5C2D91&labelColor=2F333A)](https://code.visualstudio.com/)  
-[![Git](https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=git&logoColor=F05032&labelColor=2F333A)](https://git-scm.com/)  
-[![GitHub](https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=github&logoColor=f2f2f2&labelColor=2F333A)](https://github.com/)  
-
+<!-- ubuntu -->
+<a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a> <!-- bash --> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a> <!-- python--> <a href="https://www.python.org" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Python&color=FFD43B&logo=python&logoColor=3776AB&labelColor=2F333A" alt="python"></a> </a> <!-- vim --> <a href="https://www.vim.org/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Vim&color=019733&logo=Vim&logoColor=019733&labelColor=2F333A" alt="Suite CRM"></a> <!-- vs code --> <a href="https://code.visualstudio.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Visual%20Studio%20Code&color=5C2D91&logo=Visual%20Studio%20Code&logoColor=5C2D91&labelColor=2F333A" alt="Suite CRM"></a> </a><!-- git --> <a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a> <!-- github --> <a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
+<!-- Style guidelines -->
 Style guidelines:  
 - [pycodestyle (version 2.7.*)](https://pypi.org/project/pycodestyle/)  
 - [PEP8](https://pep8.org/)  
