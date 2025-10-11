@@ -22,8 +22,9 @@ COPY ./frontend ./static/frontend
 COPY ./index.html ./index.html
 
 # expose container port (can be configured via environment variable)
-ENV PORT=8080
+ENV PORT=8000
 EXPOSE $PORT
 
 # command to run the FastAPI application with uvicorn server
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
