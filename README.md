@@ -49,7 +49,7 @@ It integrates a robust backend API built with FastAPI, supported by a data proce
 
 ## Live URL
 
-[Live URL](mdhieu.tech:8083) accessible via a .tech domain.  
+[Live URL](http://mdhieu.tech:8083/) accessible via a .tech domain.  
 
 ---
 
@@ -118,7 +118,7 @@ nyc-train-mobility-app/
 
 - Backend and frontend Dockerfiles containerize applications  
 - Docker Compose config orchestrates services with live code sync in dev  
-- GitHub Actions workflow (`.github/workflows/docker-build-push.yml`) automates Docker image build and push  
+- GitHub Actions workflow `.github/workflows/docker-build-push.yml` automates Docker image build and push  
 - Ports configured for backend (8000) and frontend (3000)  
 
 ---
@@ -220,7 +220,7 @@ Style guidelines:
    docker-compose up --build
    ```
 
-## Next Steps After Setup
+### Next Steps After Setup
 
 1. Access the Backend API:
 
