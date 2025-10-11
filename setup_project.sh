@@ -33,7 +33,7 @@ done
 
 # define files to create
 files=(
-  "CONTRIBUTORS.md"
+  "CONTRIBUTING.md"
   "docker-compose.yml"
   ".dockerignore"
   ".gitignore"
