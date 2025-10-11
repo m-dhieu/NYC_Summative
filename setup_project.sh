@@ -59,7 +59,6 @@ files=(
   "backend/app/services/trip_service.py"
   "backend/app/services/utils.py"
   "backend/__init__.py"
-  "backend/server.py"
   "backend/requirements.txt"
   "backend/.env"
   "backend/nyc_train.db"
@@ -88,7 +87,6 @@ done
 # define files to make executable
 exec_files=(
   "backend/app/main.py"
-  "backend/backend_server.py"
   "backend/app/services/trip_service.py"
   "tests/test_trip_controller.py"
   "tests/test_database.py"
