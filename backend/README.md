@@ -1,4 +1,4 @@
-# NYC Train Mobility Backend
+# NYC Train Mobility App Backend
 
 This backend service provides RESTful APIs for managing NYC Train mobility data, including trips and vendors. It includes data processing, JWT-based authentication, and CRUD endpoints.
 
@@ -112,4 +112,5 @@ Run this before starting the API server to work with clean data.
 ## Contact
 
 For questions or support, contact the project maintainer.
+
 
