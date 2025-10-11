@@ -1,0 +1,38 @@
+[
+  {
+    "trip_id": 101,
+    "vendor_id": 1,
+    "pickup_datetime": "2025-10-10T09:00:00Z",
+    "dropoff_datetime": "2025-10-10T09:15:00Z",
+    "passenger_count": 2,
+    "pickup_latitude": 40.712776,
+    "pickup_longitude": -74.005974,
+    "dropoff_latitude": 40.706000,
+    "dropoff_longitude": -74.008600,
+    "trip_duration_sec": 900,
+    "trip_distance_km": 3.2,
+    "trip_speed_kmh": 12.8,
+    "trip_efficiency": 0.11,
+    "idle_time_sec": 300,
+    "fare_amount": 15.0,
+    "fare_per_km": 4.69
+  },
+  {
+    "trip_id": 102,
+    "vendor_id": 2,
+    "pickup_datetime": "2025-10-10T10:00:00Z",
+    "dropoff_datetime": "2025-10-10T10:30:00Z",
+    "passenger_count": 1,
+    "pickup_latitude": 40.758896,
+    "pickup_longitude": -73.985130,
+    "dropoff_latitude": 40.761581,
+    "dropoff_longitude": -73.981802,
+    "trip_duration_sec": 1800,
+    "trip_distance_km": 5.0,
+    "trip_speed_kmh": 10.0,
+    "trip_efficiency": 0.08,
+    "idle_time_sec": 600,
+    "fare_amount": 20.0,
+    "fare_per_km": 4.00
+  }
+]
