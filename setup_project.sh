@@ -45,6 +45,7 @@ files=(
   "data/processed/clean_train.csv"
   "backend/app/__init__.py"
   "backend/app/main.py"
+  "backend/app/auth.py"
   "backend/app/data_processing.py"
   "backend/app/database/__init__.py"
   "backend/app/database/connection.py"
