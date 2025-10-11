@@ -54,6 +54,8 @@ files=(
   "backend/app/database/schema.sql"
   "backend/app/routers/__init__.py"
   "backend/app/routers/trip_routes.py"
+  "backend/app/routers/auth_routes.py"
+  "backend/app/routers/vendor_routes.py"
   "backend/app/controllers/__init__.py"
   "backend/app/services/__init__.py"
   "backend/app/services/trip_service.py"
