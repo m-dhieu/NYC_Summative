@@ -7,7 +7,7 @@ from app.routers import auth_routes, trip_routes, vendor_routes
 
 app = FastAPI(
     title="NYC Train Mobility API",
-    description="API backend for NYC Train mobility data with JWT authentication"
+    description="API backend for NYC train mobility data with JWT authentication"
 )
 
 # configure CORS middleware to allow cross-origin requests from specified origins
@@ -51,3 +51,4 @@ async def startup_event():
 async def shutdown_event():
     # cleanup resources if needed
     pass
+
