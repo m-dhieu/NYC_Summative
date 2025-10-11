@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NYC Train Trip Schema",
+  "description": "JSON schema describing the structure of a NYC train/taxi trip record.",
+  "type": "object",
+  "properties": {
+    "trip_id": {
+      "type": "integer",
+      "description": "Unique trip identifier"
+    },
+    "vendor_id": {
+      "type": "integer",
+      "description": "Identifier of the vendor providing the trip service"
+    },
+    "pickup_datetime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of trip start"
+    },
+    "dropoff_datetime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of trip end"
+    },
+    "passenger_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of passengers"
+    },
+    "pickup_latitude": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "description": "Geographic latitude at pickup location"
+    },
+    "pickup_longitude": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "description": "Geographic longitude at pickup location"
+    },
+    "dropoff_latitude": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "description": "Geographic latitude at dropoff location"
+    },
+    "dropoff_longitude": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "description": "Geographic longitude at dropoff location"
+    },
+    "trip_duration_sec": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Duration of trip in seconds"
+    },
+    "trip_distance_km": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Distance of trip in kilometers"
+    },
+    "trip_speed_kmh": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Average speed during trip in km/h"
+    },
+    "trip_efficiency": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Normalized trip speed efficiency ratio"
+    },
+    "idle_time_sec": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Idle time in seconds between previous dropoff and this pickup per vendor"
+    },
+    "fare_amount": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Fare amount charged for the trip"
+    },
+    "fare_per_km": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Fare amount charged per kilometer"
+    }
+  },
+  "required": [
+    "vendor_id",
+    "pickup_datetime",
+    "dropoff_datetime",
+    "passenger_count",
+    "pickup_latitude",
+    "pickup_longitude",
+    "dropoff_latitude",
+    "dropoff_longitude",
+    "trip_duration_sec",
+    "trip_distance_km"
+  ],
+  "additionalProperties": false
+}
