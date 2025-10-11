@@ -216,7 +216,50 @@ Style guidelines:
    docker-compose up --build
    ```
 
-5. Access app via localhost on designated port.
+## Next Steps After Setup
+
+1. Access the Backend API:
+
+After starting the backend (via uvicorn or Docker Compose), open your browser and navigate to the API documentation:
+
+```
+http://localhost:8000/docs
+```
+Here you can explore, test, and interact with the REST API endpoints for trips and vendors.
+
+2. Use the Frontend Dashboard:
+
+If running the frontend dev server (npm start), open:
+
+```
+http://localhost:3000
+```
+
+3. If using the backend Docker image for production, open:
+
+```
+http://localhost:8000
+```
+The dashboard interface allows filtering trips by criteria such as date, time, zone, distance, fare, and visualization of trip data and statistics.
+
+4. Try Filtering and Viewing Data:
+
+Use the date picker, sliders, and search boxes to filter trips dynamically. Observe charts and tables updating accordingly.
+
+5. Run Tests:
+
+To verify backend functionality, execute:
+
+```
+python -m unittest discover tests
+```
+View Logs and Errors:
+
+For troubleshooting, check the terminal output of backend and frontend servers. Docker logs can also be viewed with:
+
+```
+docker-compose logs -f
+```
 
 ---
 
