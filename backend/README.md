@@ -71,14 +71,13 @@ This backend service provides RESTful APIs for managing NYC Train mobility data,
 
 ### Trips
 
-| Endpoint          | Method | Description                              | Request Body                        | Response                         |
-|-------------------|--------|------------------------------------------|-------------------------------------|----------------------------------|
-| `/trips/`         | GET    | List trips, optional filter by vendor ID | Optional query param: `vendor_id`   | List of trip objects             |
-|                   |        | (Auth required)                          |                                     |                                  |
-| `/trips/{id}`     | GET    | Get trip by ID (Auth required)           | None                                | Trip object                      |
-| `/trips/`         | POST   | Create new trip (Auth required)          | Full trip details JSON as per schema| Created trip object              |
-| `/trips/{id}`     | PUT    | Update trip details (Auth required)      | Full trip details JSON as per schema| Updated trip object              |
-| `/trips/{id}`     | DELETE | Delete trip (Auth required)              | None                                | No content                       |
+| Endpoint          | Method | Description                                               | Request Body                        | Response                         |
+|-------------------|--------|-----------------------------------------------------------|-------------------------------------|----------------------------------|
+| `/trips/`         | GET    | List trips, optional filter by vendor ID (Auth required)  | Optional query param: `vendor_id`   | List of trip objects             |
+| `/trips/{id}`     | GET    | Get trip by ID (Auth required)                            | None                                | Trip object                      |
+| `/trips/`         | POST   | Create new trip (Auth required)                           | Full trip details JSON as per schema| Created trip object              |
+| `/trips/{id}`     | PUT    | Update trip details (Auth required)                       | Full trip details JSON as per schema| Updated trip object              |
+| `/trips/{id}`     | DELETE | Delete trip (Auth required)                               | None                                | No content                       |
 
 ---
 
@@ -113,3 +112,4 @@ Run this before starting the API server to work with clean data.
 ## Contact
 
 For questions or support, contact the project maintainer.
+
