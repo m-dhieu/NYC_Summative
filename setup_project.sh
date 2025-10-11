@@ -34,7 +34,6 @@ done
 # define files to create
 files=(
   "CONTRIBUTORS.md"
-  "Dockerfile"
   "docker-compose.yml"
   ".dockerignore"
   ".gitignore"
@@ -43,6 +42,7 @@ files=(
   "frontend/js/main.js"
   "data/raw/train.csv"
   "data/processed/clean_train.csv"
+  "backend/Dockerfile"
   "backend/app/__init__.py"
   "backend/app/main.py"
   "backend/app/auth.py"
