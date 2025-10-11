@@ -96,10 +96,10 @@ nyc-train-mobility-app/
 
 ## Data Processing & Database
 
-- Raw NYC taxi/train data cleaned and processed in [data_processing.py](backend/app/data_processing.py)  
+- Raw NYC taxi/train data cleaned and processed in `backend/app/data_processing.py`  
 - Features computed include trip duration, speed, efficiency, idle time, fare per km  
 - Data persisted in normalized SQLite tables: `vendors` and `trips`  
-- Full schema defined via [JSON schema](examples/trip_schema.json)
+- Full schema defined via JSON schema in `examples/trip_schema.json`
 - [ERD Diagram](docs/erd_diagram.png)
 
 ---
@@ -108,7 +108,7 @@ nyc-train-mobility-app/
 
 - Backend API built with FastAPI, exposing endpoints for trips and vendors  
 - Interactive Swagger docs at `/docs` endpoint
-- Markdown API docs at [api_docs.md](docs/api_docs.md)
+- Markdown API docs in `docs/api_docs.md`
 - Frontend UI developed with HTML, CSS, & JavaScript, served on port 3000 during dev  
 - Frontend static assets included in backend Docker image for production  
 
