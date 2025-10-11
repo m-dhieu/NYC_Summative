@@ -57,6 +57,8 @@ files=(
   "backend/app/routers/auth_routes.py"
   "backend/app/routers/vendor_routes.py"
   "backend/app/controllers/__init__.py"
+  "backend/app/controllers/trip_controller.py"
+  "backend/app/controllers/vendor_controller.py"
   "backend/app/services/__init__.py"
   "backend/app/services/trip_service.py"
   "backend/app/services/utils.py"
