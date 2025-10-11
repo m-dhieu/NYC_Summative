@@ -69,6 +69,7 @@ files=(
   "backend/README.md"
   "docs/architecture_diagram.png"
   "docs/erd_diagram.png"
+  "docs/api_docs.md"
   "docs/REPORT.pdf"
   "docs/README.md"
   "examples/trip_schema.json"
