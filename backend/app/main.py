@@ -27,7 +27,7 @@ app.add_middleware(
 )
 
 # serve frontend static files
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+# app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 # include routers
 app.include_router(auth_routes.router, prefix="/auth", tags=["Authentication"])
@@ -51,4 +51,3 @@ async def startup_event():
 async def shutdown_event():
     # cleanup resources if needed
     pass
-
