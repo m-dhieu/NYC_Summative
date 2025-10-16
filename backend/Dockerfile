@@ -26,5 +26,6 @@ ENV PORT=8000
 EXPOSE $PORT
 
 # command to run the FastAPI application with uvicorn server
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# use shell form so the $PORT env var is respected at runtime
+CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers
 
