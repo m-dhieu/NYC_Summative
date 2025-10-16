@@ -1,6 +1,6 @@
 from typing import List, Optional, Dict, Any
 from .connection import get_connection
-from .models import Trip, Vendor
+from app.database.models import Trip, Vendor
 
 class VendorManager:
     """Manages CRUD operations for Vendors table"""
