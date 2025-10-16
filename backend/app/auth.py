@@ -25,11 +25,11 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60  # token validity duration
 # hash password with bcrypt
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# OAuth2 password flow with token URL set for /token endpoint
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+# OAuth2 password flow with token URL set for /auth/token endpoint
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
 
 # demo user DB
-my_users_db = {
+fake_users_db = {
     "mdhieu@alustudent.com": {
         "username": "mdhieu@alustudent.com",
         "hashed_password": pwd_context.hash("secret"),
