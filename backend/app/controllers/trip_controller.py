@@ -4,8 +4,8 @@ It sits between API routes and DB layer, applying validation and domain rules.
 """
 
 from typing import List, Optional
-from database.manager import TripManager
-from services.trip_service import validate_trip_data, TripValidator
+from app.database.manager import TripManager
+from app.services.trip_service import validate_trip_data, TripValidator
 from pydantic import ValidationError
 
 trip_manager = TripManager()
