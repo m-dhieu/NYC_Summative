@@ -1,13 +1,15 @@
-"""
-Authentication module
-
-Implements OAuth2 JWT token-based security for FastAPI
-Includes: 
-    password hashing 
-    user validation
-    token generation
-    current user extraction
-"""
+#------------------------------------------------------------------
+# File Name:   auth.py
+# Description: Authenticates by implementing OAuth2 JWT token-based 
+#              security for FastAPI
+#              Includes: 
+#                  password hashing
+#                  user validation
+#                  token generation
+#                  current user extraction
+# Author:      Monica Dhieu
+# Date:        2025-10-14
+#------------------------------------------------------------------
 
 from datetime import datetime, timedelta
 from typing import Optional
@@ -25,11 +27,11 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60  # token validity duration
 # hash password with bcrypt
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# OAuth2 password flow with token URL set for /auth/token endpoint
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
+# OAuth2 password flow with token URL set for /token endpoint
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 # demo user DB
-fake_users_db = {
+my_users_db = {
     "mdhieu@alustudent.com": {
         "username": "mdhieu@alustudent.com",
         "hashed_password": pwd_context.hash("secret"),
