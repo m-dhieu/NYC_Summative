@@ -1,11 +1,18 @@
+#-------------------------------------------------
+# File Name:   trip_controller.py
+# Description: Handles trip-related business logic
+# Author:      Monica Dhieu
+# Date:        2025-10-14
+#-------------------------------------------------
+
 """
 Controller layer handling trip-related business logic.
 It sits between API routes and DB layer, applying validation and domain rules.
 """
 
 from typing import List, Optional
-from app.database.manager import TripManager
-from app.services.trip_service import validate_trip_data, TripValidator
+from database.manager import TripManager
+from services.trip_service import validate_trip_data, TripValidator
 from pydantic import ValidationError
 
 trip_manager = TripManager()
