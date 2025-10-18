@@ -1,9 +1,16 @@
+#--------------------------------------------------------------------
+# File Name:   auth_routes.py
+# Description: FastAPI router with a POST endpoint "/token" that 
+#              authenticates user credentials via OAuth2 and returns 
+#              a JWT access token for secure authorization
+# Author:      Monica Dhieu
+# Date:        2025-10-14
+#--------------------------------------------------------------------
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from datetime import timedelta
-from app.auth import (
-    Token, authenticate_user, create_access_token, get_current_user, fake_users_db
-)
+from auth import authenticate_user, create_access_token, Token, fake_users_db
 
 router = APIRouter()
 
