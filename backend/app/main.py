@@ -15,19 +15,19 @@ origins = [
     "http://localhost",
     "http://localhost:3000",
     "http://localhost:8000",
-    "*"  # allow all origins for dev.
+    "*" # allow all origins for dev.
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # restrict access for security
+    allow_origins=origins, # restrict access for security
     allow_credentials=True,
-    allow_methods=["*"],     # allow all HTTP methods
-    allow_headers=["*"],     # allow all headers
+    allow_methods=["*"], # allow all HTTP methods
+    allow_headers=["*"], # allow all headers
 )
 
 # serve frontend static files
-# app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 # include routers
 app.include_router(auth_routes.router, prefix="/auth", tags=["Authentication"])
