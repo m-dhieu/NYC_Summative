@@ -1,3 +1,12 @@
+#-------------------------------------------------------------------------
+# File Name:   vendor_routes.py
+# Description: FastAPI router providing CRUD API endpoints for managing
+#              vendors, including listing, retrieving, creating, updating, 
+#              and deleting vendors, all requiring user authentication
+# Author:      Monica Dhieu
+# Date:        2025-10-14
+#-------------------------------------------------------------------------
+
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List
 from database.manager import VendorManager
