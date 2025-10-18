@@ -1,10 +1,17 @@
+#---------------------------------------------------
+# File Name:   vendor_controller.py
+# Description: Handles vendor-related business logic
+# Author:      Monica Dhieu
+# Date:        2025-10-14
+#---------------------------------------------------
+
 """
 Controller layer managing vendor-related business logic.
 It abstracts DB calls for vendors behind business rules.
 """
 
 from typing import List, Optional
-from app.database.manager import VendorManager
+from database.manager import VendorManager
 
 vendor_manager = VendorManager()
 
