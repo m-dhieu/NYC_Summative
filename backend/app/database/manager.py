@@ -1,55 +1,62 @@
+#----------------------------------------------------
+# Script Name: manager.py
+# Description: Manages the NYC Train Mobility database
+# Author:      Santhiana Ange Kaze
+# Date:        2025-10-14
+#-----------------------------------------------------
+
 from typing import List, Optional, Dict, Any
 from .connection import get_connection
-from app.database.models import Trip, Vendor
+from .models import Trip, Vendor
 
 class VendorManager:
-    """Manages CRUD operations for Vendors table"""
+    # Manage CRUD operations for Vendors table
 
     def get_vendor_by_id(self, vendor_id: int) -> Optional[Vendor]:
-        """Fetches vendor by ID"""
+        # Fetch vendor by ID
         with get_connection() as conn:
             cursor = conn.execute("SELECT vendor_id, vendor_name FROM Vendors WHERE vendor_id = ?", (vendor_id,))
             row = cursor.fetchone()
             return Vendor(**row) if row else None
 
     def get_all_vendors(self) -> List[Vendor]:
-        """Retrieves all vendors"""
+        # Retrieve all vendors
         with get_connection() as conn:
             cursor = conn.execute("SELECT vendor_id, vendor_name FROM Vendors")
             return [Vendor(**row) for row in cursor.fetchall()]
 
     def add_vendor(self, vendor_name: str) -> int:
-        """Adds new vendor & returns its ID"""
+        # Add new vendor and return its ID
         with get_connection() as conn:
             cursor = conn.execute("INSERT INTO Vendors (vendor_name) VALUES (?)", (vendor_name,))
             conn.commit()
             return cursor.lastrowid
 
     def delete_vendor(self, vendor_id: int) -> bool:
-        """Deletes vendor by ID"""
+        # Delete vendor by ID
         with get_connection() as conn:
             cursor = conn.execute("DELETE FROM Vendors WHERE vendor_id = ?", (vendor_id,))
             conn.commit()
             return cursor.rowcount > 0
 
 class TripManager:
-    """Manages CRUD operations & queries for Trips table"""
+    # Manage CRUD operations and queries for Trips table
 
     def get_trip_by_id(self, trip_id: int) -> Optional[Trip]:
-        """Gets specific trip by ID"""
+        # Get specific trip by ID
         with get_connection() as conn:
             cursor = conn.execute("SELECT * FROM Trips WHERE trip_id = ?", (trip_id,))
             row = cursor.fetchone()
             return Trip(**row) if row else None
 
     def get_trips(self, limit: int = 100) -> List[Trip]:
-        """Retrieves recent trips with a default limit (sorted by pickup_datetime descending)"""
+        # Retrieve recent trips with a default limit (sort by pickup_datetime, descending)
         with get_connection() as conn:
             cursor = conn.execute("SELECT * FROM Trips ORDER BY pickup_datetime DESC LIMIT ?", (limit,))
             return [Trip(**row) for row in cursor.fetchall()]
 
     def add_trip(self, trip: Trip) -> int:
-        """Inserts new trip record, returns the inserted trip ID"""
+        # Insert new trip record and return the inserted trip ID
         with get_connection() as conn:
             cursor = conn.execute('''
                 INSERT INTO Trips 
@@ -73,27 +80,27 @@ class TripManager:
             return cursor.lastrowid
 
     def update_trip_duration(self, trip_id: int, new_duration_sec: int) -> bool:
-        """Updates duration for specific trip"""
+        # Update duration for specific trip
         with get_connection() as conn:
             cursor = conn.execute("UPDATE Trips SET trip_duration_sec = ? WHERE trip_id = ?", (new_duration_sec, trip_id))
             conn.commit()
             return cursor.rowcount > 0
 
     def delete_trip(self, trip_id: int) -> bool:
-        """Deletes trip entry by ID"""
+        # Delete trip entry by ID
         with get_connection() as conn:
             cursor = conn.execute("DELETE FROM Trips WHERE trip_id = ?", (trip_id,))
             conn.commit()
             return cursor.rowcount > 0
         
     def find_trips_by_vendor(self, vendor_id: int, limit: int = 100) -> List[Trip]:
-        """Finds trips by a specific vendor, limited to recent ones"""
+        # Find trips by a specific vendor, limited to recent ones
         with get_connection() as conn:
             cursor = conn.execute("SELECT * FROM Trips WHERE vendor_id = ? ORDER BY pickup_datetime DESC LIMIT ?", (vendor_id, limit))
             return [Trip(**row) for row in cursor.fetchall()]
 
     def find_trips_by_time_range(self, start_datetime: str, end_datetime: str, limit: int = 100) -> List[Trip]:
-        """Retrieves trips occurring within a specified datetime range"""
+        # Retrieve trips occurring within a specified datetime range
         with get_connection() as conn:
             cursor = conn.execute("""
                 SELECT * FROM Trips 
@@ -103,13 +110,13 @@ class TripManager:
             return [Trip(**row) for row in cursor.fetchall()]
 
     def find_trips_by_passenger_count(self, passenger_count: int, limit: int = 100) -> List[Trip]:
-        """Retrieves trips filtered by passenger count"""
+        # Retrieve trips filtered by passenger count
         with get_connection() as conn:
             cursor = conn.execute("SELECT * FROM Trips WHERE passenger_count = ? ORDER BY pickup_datetime DESC LIMIT ?", (passenger_count, limit))
             return [Trip(**row) for row in cursor.fetchall()]
 
     def find_trips_by_duration_range(self, min_duration: int, max_duration: int, limit: int = 100) -> List[Trip]:
-        """Finds trips within specific duration range"""
+        # Find trips within specific duration range
         with get_connection() as conn:
             cursor = conn.execute("""
                 SELECT * FROM Trips 
@@ -151,3 +158,4 @@ class TripManager:
         with get_connection() as conn:
             cursor = conn.execute(query, params)
             return [Trip(**row) for row in cursor.fetchall()]
+          
