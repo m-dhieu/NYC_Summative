@@ -1,6 +1,28 @@
-__pycache__
-*.pyc
-.git
-*.env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite
+*.db-journal
+.env
 venv/
+.venv/
+
+# VCS
+.git
+.gitignore
+
+# Node/Frontend
 node_modules/
+frontend/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test and build artifacts
+**/.pytest_cache/
+**/.mypy_cache/
+**/.coverage
+**/dist/
+**/build/

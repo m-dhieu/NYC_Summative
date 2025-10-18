@@ -11,7 +11,7 @@ It abstracts DB calls for vendors behind business rules.
 """
 
 from typing import List, Optional
-from database.manager import VendorManager
+from app.database.manager import VendorManager
 
 vendor_manager = VendorManager()
 

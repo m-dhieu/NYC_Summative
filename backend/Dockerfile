@@ -17,8 +17,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy backend application code
 COPY ./backend/app ./app
 
-# copy frontend static files
-COPY ./frontend ./static/frontend
+# copy SQLite database (if present) to working dir so default DB path works
+COPY ./backend/nyc_train.db ./nyc_train.db
+
+# copy frontend static files to match StaticFiles(directory="frontend")
+COPY ./frontend ./frontend
 COPY ./index.html ./index.html
 
 # expose container port (can be configured via environment variable)
@@ -26,5 +29,6 @@ ENV PORT=8000
 EXPOSE $PORT
 
 # command to run the FastAPI application with uvicorn server
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# use shell form so the $PORT env var is respected at runtime
+CMD ["sh", "-c", "exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000} --proxy-headers"]
 

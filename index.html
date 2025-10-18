@@ -21,6 +21,16 @@
 <body>
     <h1>NYC Train Trip Mobility Dashboard</h1>
 
+    <section class="auth" aria-label="Authentication">
+        <div id="auth-status" role="status" aria-live="polite">Not authenticated</div>
+        <form id="login-form" style="margin-top:8px; display:flex; gap:8px; align-items:center">
+            <input type="email" id="login-username" placeholder="email" value="mdhieu@alustudent.com" required />
+            <input type="password" id="login-password" placeholder="password" value="secret" required />
+            <button type="submit">Login</button>
+            <button id="logout-btn" type="button">Logout</button>
+        </form>
+    </section>
+
     <section class="filters" aria-label="Filter trips">
         <div>
             <label for="date">Date:</label>

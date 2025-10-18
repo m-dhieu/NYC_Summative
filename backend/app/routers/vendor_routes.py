@@ -9,8 +9,9 @@
 
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List
-from database.manager import VendorManager
-from auth import get_current_active_user
+from app.database.manager import VendorManager
+from app.database.connection import get_connection
+from app.auth import get_current_active_user
 from pydantic import BaseModel
 
 router = APIRouter()
@@ -48,7 +49,7 @@ def update_vendor(vendor_id: int, vendor_in: VendorIn, current_user=Depends(get_
     vendor = vendor_manager.get_vendor_by_id(vendor_id)
     if not vendor:
         raise HTTPException(status_code=404, detail="Vendor not found")
-    with vendor_manager.get_connection() as conn:
+    with get_connection() as conn:
         conn.execute("UPDATE Vendors SET vendor_name = ? WHERE vendor_id = ?", (vendor_in.vendor_name, vendor_id))
         conn.commit()
     return vendor_manager.get_vendor_by_id(vendor_id)
