@@ -1,14 +1,13 @@
-version: '3.8'
-
 services:
-  app:
+  api:
     build:
       context: .
       dockerfile: backend/Dockerfile
-    ports:
-      - "8000:8000"  # map container port 8000 to host port 8000
     environment:
       - PORT=8000
+      - DB_PATH=/app/nyc_train.db
+    expose:
+      - "8000"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
@@ -16,9 +15,17 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-
-    # volumes for development to mount local changes
     volumes:
-       - ./backend/app:/app/app
-       - ./frontend:/app/static/frontend
-       - ./index.html:/app/index.html
+      - ./backend/app:/app/app
+      - ./backend/nyc_train.db:/app/nyc_train.db
+
+  web:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped

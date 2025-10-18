@@ -1,7 +1,10 @@
 fastapi
 uvicorn[standard]
 python-jose[cryptography]
-passlib[bcrypt]
+# Pin passlib and bcrypt to compatible versions to avoid runtime errors with bcrypt backend
+passlib[bcrypt]==1.7.4
+bcrypt==3.2.2
 pydantic
 python-dotenv
 python-multipart
+gunicorn
