@@ -1,3 +1,12 @@
+-----------------------------------------------------------------------------
+-- Script Name: schema.sql
+-- Description: Creates the NYC Train Mobility database schema. 
+--              Includes table creation, constraints, comments, and indexes.
+-- Author:      Santhiana Ange Kaze
+-- Date:        2025-10-14
+-- Usage:       Executed by a DBMS
+------------------------------------------------------------------------------
+
 -- Define DB entities & attributes 
 
 -- Vendors Table
