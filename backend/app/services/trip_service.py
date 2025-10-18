@@ -1,7 +1,11 @@
-"""
-Business logic and validation layer for trip-related domain rules
-to separate business concerns from routing and DB access
-"""
+#---------------------------------------------------------------------
+# File Name:   trip_service.py
+# Description: Business logic and validation layer for trip-related 
+#              domain rules to separate business concerns from routing
+#              and DB access
+# Author:      Monica Dhieu
+# Date:        2025-10-14
+#---------------------------------------------------------------------
 
 from datetime import datetime
 from typing import Optional
