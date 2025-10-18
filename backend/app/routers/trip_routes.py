@@ -1,3 +1,14 @@
+#---------------------------------------------------------------------
+# File Name:   trip.py
+# Description: FastAPI router that manages trips with CRUD operations
+#              (list, get, create, update, delete)
+#              Uses Pydantic models for request/response validation
+#              Secured by user authentication
+#              Interacts with the database through a TripManager class
+# Author:      Monica Dhieu
+# Date:        2025-10-14
+#---------------------------------------------------------------------
+
 from fastapi import APIRouter, HTTPException, Query, Depends
 from typing import List, Optional
 from database.manager import TripManager
